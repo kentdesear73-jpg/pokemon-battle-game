@@ -359,6 +359,7 @@ body {
     justify-content: center;
     gap: 15px;
     margin: 10px 0;
+    flex-wrap: wrap;
 }
 
 .action-btn {
@@ -376,6 +377,11 @@ body {
 .action-btn:hover {
     background: #2a5a7a;
     box-shadow: 0 0 8px #88ddff;
+}
+
+.heal-btn {
+    background: #2a5a4a;
+    border-color: #88ffaa;
 }
 
 .battle-log {
@@ -405,4 +411,5 @@ body {
     .side-by-side { flex-direction: column; }
     .vs-divider { transform: rotate(90deg); }
     .pokemon-name { font-size: 1.2rem; }
+    .action-btn { padding: 8px 12px; font-size: 0.8rem; }
 }
