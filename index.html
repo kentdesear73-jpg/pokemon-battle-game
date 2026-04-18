@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Pokémon Team Battle – Victory Screen</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Pokémon Team Battle – 3 Attacks, 3 Opponents</title>
+    <link rel="stylesheet" href="pokemon.css">
 </head>
 <body>
     <div class="game-container">
         <!-- TEAM SELECTION SCREEN -->
         <div id="teamSelection" class="selection-panel">
             <h1>CHOOSE YOUR 3 POKEMON</h1>
-            <p class="subtitle">Pick a team of 3 to battle 5 enemies</p>
+            <p class="subtitle">Pick a team of 3 to battle 3 enemies</p>
             <div id="teamGrid" class="team-grid"></div>
             <div class="selected-team">
                 <h3>Your Team (click to remove)</h3>
@@ -24,7 +24,7 @@
         <div id="battleArena" class="battle-arena" style="display: none;">
             <div class="battle-header">
                 <div class="battle-stats">
-                    <span>ENEMIES DEFEATED: <strong id="enemiesDefeated">0</strong> / 5</span>
+                    <span>ENEMIES DEFEATED: <strong id="enemiesDefeated">0</strong> / 3</span>
                     <span>ACTIVE POKEMON: <strong id="activeName">-</strong></span>
                 </div>
             </div>
@@ -69,9 +69,9 @@
             <div class="team-status" id="teamStatus"></div>
 
             <div class="action-buttons">
-                <button id="attack1Btn" class="action-btn">ATTACK A</button>
-                <button id="attack2Btn" class="action-btn">ATTACK B</button>
-                <button id="healBtn" class="action-btn heal-btn">HEAL</button>
+                <button id="attack1Btn" class="action-btn">ATTACK 1</button>
+                <button id="attack2Btn" class="action-btn">ATTACK 2</button>
+                <button id="attack3Btn" class="action-btn">ATTACK 3</button>
             </div>
 
             <div class="battle-log" id="battleLog">
@@ -82,6 +82,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="pokemon.js"></script>
 </body>
 </html>
