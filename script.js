@@ -4,18 +4,21 @@
 // After defeating all 3 enemies, shows victory message.
 
 const allPokemon = {
+    // Ground
     groudon: { name: "Groudon", type: "Ground", maxHp: 115, color: "#b87c3a", initial: "G", img: "images/groudon.png",
         attacks: { a1: { name: "Precipice Blades", dmg: [14,22] }, a2: { name: "Lava Plume", dmg: [18,27] }, a3: { name: "Earth Power", dmg: [20,30] } } },
     landorus: { name: "Landorus", type: "Ground", maxHp: 110, color: "#b87c3a", initial: "L", img: "images/landorus.png",
         attacks: { a1: { name: "Sandsear Storm", dmg: [13,21] }, a2: { name: "Earthquake", dmg: [16,25] }, a3: { name: "Focus Blast", dmg: [19,29] } } },
     garchomp: { name: "Garchomp", type: "Ground", maxHp: 112, color: "#b87c3a", initial: "C", img: "images/garchomp.png",
         attacks: { a1: { name: "Dragon Claw", dmg: [12,20] }, a2: { name: "Dig", dmg: [14,23] }, a3: { name: "Outrage", dmg: [21,31] } } },
+    // Water
     kyogre: { name: "Kyogre", type: "Water", maxHp: 115, color: "#3a7cb8", initial: "K", img: "images/kyogre.png",
         attacks: { a1: { name: "Origin Pulse", dmg: [15,24] }, a2: { name: "Water Spout", dmg: [18,27] }, a3: { name: "Ice Beam", dmg: [20,29] } } },
     palkia: { name: "Palkia", type: "Water", maxHp: 110, color: "#3a7cb8", initial: "P", img: "images/palkia.png",
         attacks: { a1: { name: "Spacial Rend", dmg: [14,22] }, a2: { name: "Aqua Tail", dmg: [16,25] }, a3: { name: "Hydro Pump", dmg: [21,30] } } },
     greninja: { name: "Greninja", type: "Water", maxHp: 105, color: "#3a7cb8", initial: "G", img: "images/greninja.png",
         attacks: { a1: { name: "Water Shuriken", dmg: [12,19] }, a2: { name: "Night Slash", dmg: [14,23] }, a3: { name: "Hydro Cannon", dmg: [22,32] } } },
+    // Fire
     charizard: { name: "Charizard", type: "Fire", maxHp: 110, color: "#e05a2a", initial: "C", img: "images/charizard.png",
         attacks: { a1: { name: "Flamethrower", dmg: [13,21] }, a2: { name: "Dragon Breath", dmg: [15,24] }, a3: { name: "Blast Burn", dmg: [22,32] } } },
     moltres: { name: "Moltres", type: "Fire", maxHp: 112, color: "#e05a2a", initial: "M", img: "images/moltres.png",
@@ -24,7 +27,7 @@ const allPokemon = {
         attacks: { a1: { name: "Blaze Kick", dmg: [13,21] }, a2: { name: "Flare Blitz", dmg: [17,26] }, a3: { name: "Focus Energy", dmg: [20,30] } } }
 };
 
-// 3 Opponents only
+// 3 Opponents
 const opponentsList = [
     { name: "Mewtwo", type: "Psychic", maxHp: 115, initial: "M", color: "#9b59b6", img: "images/mewtwo.png",
         attacks: { a1: [12,20], a2: [15,25], a3: [18,28] } },
@@ -222,7 +225,7 @@ function checkActiveFainted() {
 
 function enemyTurn() {
     if (!gameActive || !currentEnemy || currentEnemy.hp <= 0) return;
-    const r = Math.floor(Math.random() * 3) + 1; // 1-3 for three attacks
+    const r = Math.floor(Math.random() * 3) + 1;
     const dmgRange = currentEnemy.attacks[`a${r}`];
     let rawDamage = Math.floor(Math.random() * (dmgRange[1] - dmgRange[0] + 1) + dmgRange[0]);
     if (Math.random() < DODGE_CHANCE) {
